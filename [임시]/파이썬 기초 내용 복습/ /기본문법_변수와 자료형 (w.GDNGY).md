@@ -109,6 +109,11 @@ result = do_nothing()
 print(result) # 출력: None
 ```
 
+### 📌 Python에서 print(f"...")의 의미와 f-string 개념 정리
+#### 1️⃣ print(f"...")에서 f의 의미
+- f는 **f-string (formatted string literal)**을 의미함
+- 
+
 #### 🔥 불리언 vs None 차이점 정리
 |자료형|값|논리적 의미|데이터 타입|
 |------|---|---|-----|
