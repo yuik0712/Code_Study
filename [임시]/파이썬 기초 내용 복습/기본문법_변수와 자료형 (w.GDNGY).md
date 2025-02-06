@@ -170,6 +170,29 @@ print(f"Pi rounded: {pi:.2f}") # 소수점 둘째 자리까지 출력
 
 # 출력 결과: Pi rounded: 3.14
 ```
+##### 2. 숫자 콤마(,) 추가
+```
+money = 1000000
+print(f"Money: {money:,}")  # 천 단위 콤마 추가
+
+# 출력 결과 > Money: 1,000,000
+```
+##### 3. 정렬 (왼쪽, 오른쪽, 가운데)
+```
+text = "Python"
+print(f"Left: {text:<10}")   # 왼쪽 정렬
+print(f"Right: {text:>10}")  # 오른쪽 정렬
+print(f"Center: {text:^10}") # 가운데 정렬
+
+# 출력 결과
+# Left: Python    
+# Right:    Python
+# Center:  Python
+```
+### 결론 (Python에서 print(f"...")의 의미와 f-string 개념 정리)
+- print(f"...")에서 f는 f-string을 의미하며, 변수를 문자열 안에 삽입할 수 있음
+- 가독성이 좋고 format()보다 더 간결하게 문자열을 처리할 수 있음.
+- 연산, 함수 호출, 포맷 지정(소수점, 숫자 포맷, 정렬 등)도 가능함.
 
 #### 🔥 불리언 vs None 차이점 정리
 |자료형|값|논리적 의미|데이터 타입|
