@@ -112,7 +112,64 @@ print(result) # 출력: None
 ### 📌 Python에서 print(f"...")의 의미와 f-string 개념 정리
 #### 1️⃣ print(f"...")에서 f의 의미
 - f는 **f-string (formatted string literal)**을 의미함
-- 
+- Python3.6부터 도입된 문자열 포맷팅 방식
+- 문자열 안에서 변수를 쉽게 삽입할 수 있도록 도와줌.
+```
+# 예제 코드
+name = "Alice"
+age = 25
+print(f"My name is {name} and I am 25 years old.") # 출력: My name is Alice and I am 25 years old.
+```
+
+#### 2️⃣ f-string의 주요 특징
+##### ✅ 1. 중괄호 {} 안에 변수, 연산, 함수 호출 가능
+```
+s = 5
+b = 10
+print(f"{a} + {b} = {a + b}")  # 연산 가능
+print(f"Uppercase: {'hello'.upper()}")  # 함수 호출 가능
+
+# 출력 결과
+5 + 10 = 15
+Uppercase: HELLO
+```
+##### ✅ 2. format()보다 간결하고 가독성이 좋음
+###### format() 방식
+```
+print("Hello, {}!".format(name))
+```
+###### f-string 방식 (더 간결!)
+```
+print(f"Hello, {name}!")
+```
+##### ✅ 3. f는 소문자, 대문자 모두 가능
+```
+print(f"Hello, {name}")  # 소문자 f 가능
+print(F"Hello, {name}")  # 대문자 F 가능
+```
+##### ✅ 4. f를 안 붙이면 변수 삽입이 안 됨
+```
+print("Hello, {name}")  # 변수 값이 출력되지 않음
+Hello, {name}  # name의 값이 아니라, {name} 그대로 출력됨
+```
+
+#### 3️⃣ type()과 함께 활용
+- f-string을 사용하면 변수의 값과 데이터 타입을 동시에 확인하기 편리함.
+  ```
+  is_python_fun = True
+  print(f"is_python_fun: {is_python_fun}, type: {type(is_python_fun)}")
+
+  # 출력 결과: is_python_fun: True, type: <class 'bool'>
+  ```
+
+#### 4️⃣ 추가 기능: 문자열 포맷 지정
+##### 1. 소수점 자리수 조절
+```
+pi = 3.141592
+print(f"Pi rounded: {pi:.2f}") # 소수점 둘째 자리까지 출력
+
+# 출력 결과: Pi rounded: 3.14
+```
 
 #### 🔥 불리언 vs None 차이점 정리
 |자료형|값|논리적 의미|데이터 타입|
