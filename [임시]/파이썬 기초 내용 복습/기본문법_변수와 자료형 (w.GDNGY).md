@@ -182,6 +182,35 @@ def do_nothing():
 result = do_nothing()
 print(result) # 출력: None
 ```
+
+
+##### 1.2.1 🔥 불리언 vs None 차이점 정리
+|자료형|값|논리적 의미|데이터 타입|
+|------|---|---|-----|
+|```True```|1|참 (```True```)|```bool```|
+|```False```|0|거짓(```False```)|```bool```|
+|```None```|없음|거짓 (```False``` 취급)|```NoneType```|
+- ```Boolean```(```True```, ```False```)은 논리 연산을 위해 사용되며, ```1```, ```0```과 변환 가능함
+- ```None```은 값이 없음을 나타내며, ```False```로 취급되지만 ```False```와는 다름
+- 변수를 초기화할 때, 함수의 반환값이 없을 때 등 다양한 상황에서 활용됨
+
+### 추가적으로
+#### ```NameError: name 'greeting' is not defined```의 경우
+- <b>NameError</b>: 정의되지 않은 (또는 선언되지 않은)변수를 사용하려 할 때 발생하는 에러
+  - 코드 예시 (올바른 변수 선언)
+    ```
+    # 문자열 변수
+    greeting = "Hello, World!" # 여기에 greeting 변수를 선언해줍니다.
+    print(f"greeing: {greeting}, type: {type(greeting)}")
+    ```
+    - greeting 변수를 먼저 선언하였기 때문에, print 구문에서 greeting을 문제없이 사용할 수 있음
+      
+  - 코드 예시 (올바르지 않은 변수 선언)
+    ```
+    print(f"greeing: {greeting}, type: {type(greeting)}")
+    greeting = "Hello, World!" # 여기에 greeting 변수를 선언해줍니다.
+    ```
+
 ### 📌 Python에서 print(f"...")의 의미와 f-string 개념 정리
 #### 1️⃣ print(f"...")에서 f의 의미
 - f는 **f-string (formatted string literal)**을 의미함
@@ -262,21 +291,6 @@ print(f"Center: {text:^10}") # 가운데 정렬
 # Right:    Python
 # Center:  Python
 ```
-### 결론 (Python에서 print(f"...")의 의미와 f-string 개념 정리)
-- print(f"...")에서 f는 f-string을 의미하며, 변수를 문자열 안에 삽입할 수 있음
-- 가독성이 좋고 format()보다 더 간결하게 문자열을 처리할 수 있음.
-- 연산, 함수 호출, 포맷 지정(소수점, 숫자 포맷, 정렬 등)도 가능함.
-
-##### 1.2.1 🔥 불리언 vs None 차이점 정리
-|자료형|값|논리적 의미|데이터 타입|
-|------|---|---|-----|
-|```True```|1|참 (```True```)|```bool```|
-|```False```|0|거짓(```False```)|```bool```|
-|```None```|없음|거짓 (```False``` 취급)|```NoneType```|
-- ```Boolean```(```True```, ```False```)은 논리 연산을 위해 사용되며, ```1```, ```0```과 변환 가능함
-- ```None```은 값이 없음을 나타내며, ```False```로 취급되지만 ```False```와는 다름
-- 변수를 초기화할 때, 함수의 반환값이 없을 때 등 다양한 상황에서 활용됨
-
 
 ### 핵심 포인트 정리
 - <b>변수(Variable)</b>: 데이터를 저장하는 공간(num1, num2, ...등)
@@ -284,24 +298,12 @@ print(f"Center: {text:^10}") # 가운데 정렬
 - <b>출력(print 함수)</b>: print() 안에 변수나 문자열을 넣어 콘솔에 보여줌
 - <b>문자열 연산</b>: + 연산자로 문자열을 이어 붙이거나, f"..."방식을 쓰면 {변수}처럼 변수를 간단히 포함할 수 있다.
 - <b>여러 줄 문자열</b>: '''...''' 또는 """..."""를 쓰면 편하게 여러 줄을 표현할 수 있음
-
-### 추가적으로, ```NameError: name 'greeting' is not defined```의 경우
-- <b>NameError</b>: 정의되지 않은 (또는 선언되지 않은)변수를 사용하려 할 때 발생하는 에러
-  - 코드 예시 (올바른 변수 선언)
-    ```
-    # 문자열 변수
-    greeting = "Hello, World!" # 여기에 greeting 변수를 선언해줍니다.
-    print(f"greeing: {greeting}, type: {type(greeting)}")
-    ```
-    - greeting 변수를 먼저 선언하였기 때문에, print 구문에서 greeting을 문제없이 사용할 수 있음
-      
-  - 코드 예시 (올바르지 않은 변수 선언)
-    ```
-    print(f"greeing: {greeting}, type: {type(greeting)}")
-    greeting = "Hello, World!" # 여기에 greeting 변수를 선언해줍니다.
-    ```
-
-### 정리
+---
+#### 결론 (Python에서 print(f"...")의 의미와 f-string 개념 정리)
+- print(f"...")에서 f는 f-string을 의미하며, 변수를 문자열 안에 삽입할 수 있음
+- 가독성이 좋고 format()보다 더 간결하게 문자열을 처리할 수 있음.
+- 연산, 함수 호출, 포맷 지정(소수점, 숫자 포맷, 정렬 등)도 가능함.
+---
 - <b>NameError</b>: 정의(선언)되지 않은 변수를 참조할 때 발생하는 에러
 - 해결 방법
   - 변수르 사용하기 전에 반드시 선언해야 함.
@@ -309,4 +311,5 @@ print(f"Center: {text:^10}") # 가운데 정렬
 
 # 블로그 참조
 - https://gdngy.tistory.com/74 (GDNDY님 티스토리)
-https://sosodev.tistory.com/entry/Python-complex-%ED%81%B4%EB%9E%99%EC%8A%A4%EB%A5%BC-%EC%82%AC%EC%9A%A9%ED%95%B4%EC%84%9C-%EB%B3%B5%EC%86%8C%EC%88%98-%EB%8B%A4%EB%A3%A8%EA%B8%B0
+  
+- https://sosodev.tistory.com/entry/Python-complex-%ED%81%B4%EB%9E%99%EC%8A%A4%EB%A5%BC-%EC%82%AC%EC%9A%A9%ED%95%B4%EC%84%9C-%EB%B3%B5%EC%86%8C%EC%88%98-%EB%8B%A4%EB%A3%A8%EA%B8%B0
